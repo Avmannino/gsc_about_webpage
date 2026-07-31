@@ -415,6 +415,7 @@ svg {
 
 .intro-content > p:not(.section-label) {
   margin: 25px 0 0;
+  overflow-wrap: break-word;
   color: #3e4c64;
   font-size: clamp(16px, 1.2vw, 19px);
   line-height: 1.8;
@@ -789,6 +790,7 @@ svg {
 .membership-card p {
   max-width: 650px;
   margin: 27px 0 0;
+  overflow-wrap: break-word;
   color: rgba(255, 255, 255, 0.75);
   font-size: clamp(16px, 1.2vw, 19px);
   line-height: 1.75;
@@ -1206,11 +1208,19 @@ svg {
 
   .intro-layout,
   .membership-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .intro-content {
     max-width: 760px;
+  }
+
+  .intro-content h2 {
+    text-align: center;
+  }
+
+  .intro-content .heading-line {
+    margin-inline: auto;
   }
 
   .intro-image {
