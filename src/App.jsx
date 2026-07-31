@@ -93,8 +93,6 @@ function App() {
         <section className="intro-section section-padding">
           <div className="content-container intro-layout">
             <div className="intro-content">
-              <p className="section-label">Founded in 1954</p>
-
               <h2>
                 A Community
                 <br />
@@ -104,28 +102,43 @@ function App() {
               <div className="heading-line heading-line--dark" />
 
               <p>
-                Founded in 1954, Greenwich Skating Club is a
-                private, member-based club where families and
-                friends can spend time together both on and off
-                the ice.
+                Greenwich Skating Club (GSC) is a member-based
+                club that offers endless opportunities for
+                families and friends—both new and old—to
+                connect, have fun, and enjoy ice sports together.
+                Founded in 1954 and conveniently located on
+                Cardinal Road near Greenwich High School, GSC is
+                home to a community of 250 families. Members
+                enjoy access to a private rink and a recently
+                renovated clubhouse featuring a pro shop,
+                fireplaces, coaching rooms, and a snack bar,
+                along with exceptional access to ice time that is
+                simply not available through most other programs.
               </p>
 
               <p>
-                More than 250 families call GSC home, creating a
-                close-knit community centered around skating,
-                hockey, and shared traditions. With programs for
-                children and adults, the club continues to bring
-                people together and strengthen the sense of
-                community that has defined GSC for generations.
+                GSC offers programming for children and adults of
+                all ages, including weekend general skating
+                sessions, travel hockey teams for boys ages 6–14
+                and girls ages 6–19, Learn-to-Play Hockey and Mini
+                Mites programs, the Cardinal Road Adult Hockey
+                League with six teams and more than 120 players,
+                free Stick-and-Puck sessions during holiday
+                breaks, figure skating lessons beginning at age 3,
+                curling, and a variety of family parties and
+                social gatherings throughout the year.
               </p>
 
-              <a
-                className="inline-link"
-                href={`${SITE_BASE}/club-history`}
-              >
-                Explore club history
-                <ArrowIcon />
-              </a>
+              <p>
+                If you are not currently a member and are
+                interested in joining, please email{" "}
+                <strong>
+                  <a href="mailto:gscadmissions@greenwichskatingclub.org">
+                    gscadmissions@greenwichskatingclub.org
+                  </a>
+                </strong>
+                .
+              </p>
             </div>
 
             <figure className="intro-image">
@@ -135,6 +148,14 @@ function App() {
                 src={IMAGES.youthHockey}
                 alt="Greenwich Skating Club youth hockey players"
               />
+
+              <a
+                className="inline-link"
+                href={`${SITE_BASE}/club-history`}
+              >
+                Explore club history
+                <ArrowIcon />
+              </a>
             </figure>
           </div>
         </section>
@@ -192,6 +213,14 @@ function App() {
                 member-based club. Prospective members can learn
                 more about the application process, membership
                 requirements, and the steps involved in joining.
+              </p>
+
+              <p>
+                Interested in joining? Email{" "}
+                <a href="mailto:gscadmissions@greenwichskatingclub.org">
+                  gscadmissions@greenwichskatingclub.org
+                </a>
+                .
               </p>
 
               <a

@@ -394,7 +394,7 @@ svg {
   grid-template-columns:
     minmax(0, 0.9fr)
     minmax(460px, 1.1fr);
-  align-items: center;
+  align-items: end;
   gap: clamp(60px, 7vw, 120px);
 }
 
@@ -407,6 +407,10 @@ svg {
   font-size: clamp(45px, 4.5vw, 78px);
   line-height: 1.02;
   text-transform: uppercase;
+}
+
+.intro-content h2 {
+  font-size: clamp(40px, 3.8vw, 62px);
 }
 
 .intro-content > p:not(.section-label) {
@@ -437,6 +441,11 @@ svg {
   transition: transform 160ms ease;
 }
 
+.intro-image .inline-link {
+  margin-top: 75px;
+  font-size: 28px;
+}
+
 .inline-link:hover .arrow-icon {
   transform: translateX(5px);
 }
@@ -444,6 +453,7 @@ svg {
 .intro-image {
   position: relative;
   margin: 0;
+  text-align: center;
 }
 
 .intro-image-accent {
