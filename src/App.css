@@ -278,7 +278,7 @@ svg {
 .about-hero {
   position: relative;
   display: grid;
-  min-height: clamp(90px, 7vw, 120px);
+  min-height: clamp(140px, 11vw, 190px);
   overflow: hidden;
   color: var(--white);
   background-image: var(--about-hero-image);
@@ -311,9 +311,9 @@ svg {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: clamp(6px, 0.8vw, 10px);
+  gap: clamp(16px, 2vw, 26px);
   align-self: center;
-  padding-block: clamp(8px, 0.9vw, 12px);
+  padding-block: clamp(16px, 2vw, 28px) clamp(24px, 3vw, 40px);
 }
 
 .eyebrow,
@@ -331,7 +331,7 @@ svg {
   max-width: 1000px;
   margin: 0;
   font-family: "Oswald", sans-serif;
-  font-size: clamp(26px, 3vw, 44px);
+  font-size: clamp(34px, 4vw, 56px);
   line-height: 0.92;
   letter-spacing: 0.015em;
   text-transform: uppercase;
@@ -354,7 +354,7 @@ svg {
 }
 
 .about-hero-crest {
-  width: clamp(44px, 3.5vw, 60px);
+  width: clamp(56px, 4.5vw, 76px);
   height: auto;
   margin: 0;
   flex-shrink: 0;
@@ -1285,7 +1285,7 @@ svg {
   }
 
   .about-hero {
-    min-height: 100px;
+    min-height: 160px;
     background-position: 61% center;
   }
 
@@ -1294,12 +1294,12 @@ svg {
   }
 
   .about-hero-content {
-    gap: 8px;
-    padding-block: 14px;
+    gap: 18px;
+    padding-block: 18px 28px;
   }
 
   .about-hero h1 {
-    font-size: clamp(22px, 7vw, 32px);
+    font-size: clamp(26px, 8vw, 38px);
   }
 
   .about-hero-crest {
