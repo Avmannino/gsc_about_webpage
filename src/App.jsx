@@ -84,8 +84,6 @@ function App() {
               alt="Greenwich Skating Club crest"
             />
 
-            <div className="heading-line heading-line--vertical" />
-
             <h1>About The Club</h1>
           </div>
         </section>

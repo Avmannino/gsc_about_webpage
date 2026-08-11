@@ -278,13 +278,14 @@ svg {
 .about-hero {
   position: relative;
   display: grid;
-  min-height: clamp(160px, 13vw, 240px);
+  min-height: clamp(130px, 10vw, 170px);
   overflow: hidden;
   color: var(--white);
   background-image: var(--about-hero-image);
   background-position: center 52%;
   background-size: cover;
   isolation: isolate;
+  border-bottom: 6px solid var(--red);
 }
 
 .about-hero::before {
@@ -302,26 +303,17 @@ svg {
   position: absolute;
   z-index: -1;
   inset: 0;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(4, 20, 49, 0.92) 0%,
-      rgba(7, 31, 72, 0.75) 42%,
-      rgba(7, 31, 72, 0.22) 78%
-    ),
-    linear-gradient(
-      0deg,
-      rgba(5, 20, 45, 0.42),
-      transparent 52%
-    );
+  background: rgba(6, 22, 51, 0.88);
 }
 
 .about-hero-content {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: clamp(20px, 3vw, 36px);
+  text-align: center;
+  gap: clamp(10px, 1.4vw, 16px);
   align-self: center;
-  padding-block: clamp(24px, 3vw, 40px);
+  padding-block: clamp(14px, 1.6vw, 22px);
 }
 
 .eyebrow,
@@ -359,13 +351,6 @@ svg {
 
 .heading-line--center {
   margin-inline: auto;
-}
-
-.heading-line--vertical {
-  width: 4px;
-  height: clamp(40px, 4vw, 60px);
-  margin-top: 0;
-  flex-shrink: 0;
 }
 
 .about-hero-crest {
@@ -1300,7 +1285,7 @@ svg {
   }
 
   .about-hero {
-    min-height: 190px;
+    min-height: 130px;
     background-position: 61% center;
   }
 
@@ -1308,24 +1293,7 @@ svg {
     background-position: 61% center;
   }
 
-  .about-hero-overlay {
-    background:
-      linear-gradient(
-        90deg,
-        rgba(4, 20, 49, 0.94),
-        rgba(7, 31, 72, 0.69)
-      ),
-      linear-gradient(
-        0deg,
-        rgba(4, 20, 49, 0.4),
-        transparent
-      );
-  }
-
   .about-hero-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
     gap: 14px;
     padding-block: 24px 40px;
   }
@@ -1336,11 +1304,6 @@ svg {
 
   .about-hero-crest {
     width: 72px;
-  }
-
-  .heading-line--vertical {
-    width: 60px;
-    height: 4px;
   }
 
   .intro-content h2,
@@ -1462,11 +1425,6 @@ svg {
 
   .about-hero-crest {
     width: 60px;
-  }
-
-  .heading-line--vertical {
-    width: 50px;
-    height: 4px;
   }
 
   .program-card {
