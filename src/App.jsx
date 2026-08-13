@@ -180,7 +180,7 @@ function FooterLogo() {
   return (
     <a
       className="footer-logo"
-      href={`${FOOTER_SITE_URL}/`}
+      href={FOOTER_SITE_URL}
       target="_top"
       aria-label="Greenwich Skating Club home"
     >
