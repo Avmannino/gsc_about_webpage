@@ -370,7 +370,7 @@ function App() {
                 interested in joining, please email{" "}
                 <strong>
                   <a href="mailto:gscadmissions@greenwichskatingclub.org">
-                    gscadmissions@greenwichskatingclub.org
+                    gscadmissions@<wbr />greenwichskatingclub.org
                   </a>
                 </strong>
                 .
@@ -451,19 +451,11 @@ function App() {
                 requirements, and the steps involved in joining.
               </p>
 
-              <p>
-                Interested in joining? Email{" "}
-                <a href="mailto:gscadmissions@greenwichskatingclub.org">
-                  gscadmissions@greenwichskatingclub.org
-                </a>
-                .
-              </p>
-
               <a
                 className="light-button"
-                href={`${SITE_BASE}/prospective-members`}
+                href={`${FOOTER_SITE_URL}/admissions`}
               >
-                Prospective members
+                Admissions Process
                 <ArrowIcon />
               </a>
             </article>
