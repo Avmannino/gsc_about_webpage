@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap");
+
 :root {
   --navy-darkest: #071833;
   --navy-dark: #0a2454;
@@ -14,7 +16,7 @@
   --content-width: 1480px;
   --header-height: 108px;
 
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: Arial, sans-serif;
   color: var(--text);
   background: var(--off-white);
   font-synthesis: none;
@@ -1367,6 +1369,7 @@ svg {
   overflow: hidden;
   isolation: isolate;
   color: var(--footer-white);
+  font-family: "Montserrat", Arial, sans-serif;
   background:
     radial-gradient(circle at 9% 13%, rgba(34, 87, 151, 0.4), transparent 30%),
     linear-gradient(112deg, var(--footer-navy-deep), var(--footer-navy));
@@ -1482,6 +1485,7 @@ svg {
 
 .footer-logo:focus-visible,
 .footer-menu a:focus-visible,
+.footer-menu button:focus-visible,
 .footer-connect a:focus-visible,
 .site-footer__bottom a:focus-visible {
   outline: 2px solid var(--footer-red);
@@ -1496,16 +1500,49 @@ svg {
 }
 
 .footer-menu__group-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
   margin: 0 0 9px;
-  padding-bottom: 11px;
+  padding: 0 0 11px;
+  border: none;
   border-bottom: 1px solid var(--footer-line);
+  background: none;
   color: var(--footer-white);
   font-family: "Bebas Neue", Impact, sans-serif;
   font-size: 1.2rem;
   font-weight: 400;
   letter-spacing: 0.05em;
   line-height: 1;
+  text-align: left;
   text-transform: uppercase;
+  cursor: pointer;
+  transition: color 180ms ease;
+}
+
+.footer-menu__group-title:hover {
+  color: var(--footer-red);
+}
+
+.footer-menu__group-arrow {
+  display: inline-flex;
+  flex: 0 0 auto;
+  transform: rotate(90deg);
+  transition: transform 220ms ease;
+}
+
+.footer-menu__group-arrow--open {
+  transform: rotate(-90deg);
+}
+
+.footer-menu__group-panel {
+  overflow: hidden;
+  max-height: 0;
+  contain: layout;
+  will-change: max-height;
+  transition: max-height 280ms ease;
 }
 
 .footer-menu__group ul {
@@ -1515,6 +1552,7 @@ svg {
 }
 
 .footer-menu__group a svg,
+.footer-menu__group button svg,
 .member-button svg {
   width: 15px;
   height: 15px;
@@ -1837,6 +1875,7 @@ svg {
   }
 
   .footer-menu__group-title {
+    justify-content: center;
     text-align: center;
   }
 
