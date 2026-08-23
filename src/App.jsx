@@ -123,7 +123,7 @@ const exploreGroups = [
     title: "Contact",
     links: [
       { label: "Map & Directions", href: `${FOOTER_SITE_URL}/directions` },
-      { label: "Contact Form", href: `${FOOTER_SITE_URL}/contact` },
+      { label: "Contact Us", href: `${FOOTER_SITE_URL}/contact` },
     ],
   },
 ];
