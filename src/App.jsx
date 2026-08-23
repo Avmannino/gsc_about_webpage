@@ -454,7 +454,7 @@ function App() {
 
               <a
                 className="inline-link"
-                href={`${SITE_BASE}/club-history`}
+                href={`${SITE_BASE}/history`}
               >
                 Explore club history
                 <ArrowIcon />
