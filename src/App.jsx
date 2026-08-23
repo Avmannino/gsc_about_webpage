@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import logo from "./assets/logo.png";
+import footerLogo from "./assets/gsc-logo.png";
 import heroClubhouse from "./assets/hero-clubhouse.jpg";
 
 const SITE_BASE = "https://wingsarenact.wixstudio.com/gscnewsite";
@@ -12,6 +13,7 @@ const SITE_BASE = "https://wingsarenact.wixstudio.com/gscnewsite";
 */
 const IMAGES = {
   logo,
+  footerLogo,
 
   hero: heroClubhouse,
 
@@ -185,7 +187,7 @@ function FooterLogo() {
       target="_top"
       aria-label="Greenwich Skating Club home"
     >
-      <img src={IMAGES.logo} alt="Greenwich Skating Club" />
+      <img src={IMAGES.footerLogo} alt="Greenwich Skating Club" />
     </a>
   );
 }
@@ -297,7 +299,7 @@ function ConnectPanel() {
         <div className="footer-connect__details">
           <a href={`${FOOTER_SITE_URL}/directions`} target="_top">
             <FooterPinIcon />
-            <span>Cardinal Road · Greenwich, Connecticut</span>
+            <span>15 Cardinal Road · Greenwich, CT 06830</span>
           </a>
 
           <a href={`mailto:${ADMISSIONS_EMAIL}`}>

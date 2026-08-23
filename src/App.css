@@ -371,7 +371,7 @@ svg {
 }
 
 .about-hero-crest {
-  width: clamp(56px, 4.5vw, 76px);
+  width: clamp(68px, 5.5vw, 92px);
   height: auto;
   margin: 0;
   flex-shrink: 0;
@@ -1239,7 +1239,7 @@ svg {
   }
 
   .about-hero-crest {
-    width: 48px;
+    width: 58px;
   }
 
   .intro-content h2,
@@ -1341,7 +1341,7 @@ svg {
   }
 
   .about-hero-crest {
-    width: 40px;
+    width: 48px;
   }
 
   .program-card {
@@ -1468,7 +1468,7 @@ svg {
 
 .footer-logo {
   display: inline-flex;
-  width: clamp(132px, 10vw, 172px);
+  width: clamp(96px, 7vw, 128px);
   margin-left: 20px;
   margin-top: 50px;
   border-radius: 50%;
@@ -1529,6 +1529,7 @@ svg {
 .footer-menu__group-arrow {
   display: inline-flex;
   flex: 0 0 auto;
+  color: var(--footer-red);
   transform: rotate(90deg);
   transition: transform 220ms ease;
 }
@@ -1804,7 +1805,7 @@ svg {
   }
 
   .footer-logo {
-    width: 138px;
+    width: 104px;
   }
 
   .footer-menu__groups {
@@ -1854,7 +1855,7 @@ svg {
   .footer-logo {
     position: relative;
     left: -8px;
-    width: 110px;
+    width: 84px;
     margin: 0 auto;
   }
 
