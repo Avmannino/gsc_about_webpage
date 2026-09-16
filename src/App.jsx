@@ -393,7 +393,7 @@ function App() {
               <p>
                 GSC offers programming for children and adults of
                 all ages, including weekend general skating
-                sessions, travel hockey teams for boys ages 6–14
+                sessions, travel hockey teams for boys ages 6–18
                 and girls ages 6–19, Learn-to-Play Hockey and Mini
                 Mites programs, the Cardinal Road Adult Hockey
                 League with six teams and more than 120 players,

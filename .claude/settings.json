@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(awk 'NR<=1330 && /@media/{print NR\": \"$0}' src/App.css)",
+      "Bash(npx eslint *)",
+      "Bash(npx oxlint *)",
+      "Bash(pkill -f \"vite preview\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:4173/)",
+      "Bash(curl -s -I http://localhost:4173/)",
+      "Bash(curl -s http://localhost:4173/gsc_about_webpage/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:4173/gsc_about_webpage/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:4173/gsc_about_webpage/assets/index-BoFdV2mu.js)",
+      "Bash(node -e \"require\\('@babel/core'\\)\")",
+      "Bash(git commit -m ' *)",
+      "Bash(grep -n 'href={`\\\\${FOOTER_SITE_URL}/`}' src/App.jsx)",
+      "Bash(git fetch *)",
+      "Bash(git show *)",
+      "Bash(grep -o 'href:`\\\\${x}/`[^}]*')",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s http://localhost:5173/)"
+    ]
+  }
+}
