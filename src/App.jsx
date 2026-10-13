@@ -131,7 +131,7 @@ function App() {
               </p>
 
               <p>
-                If you are interested in joining, please visit
+                If you are interested in joining, please review
                 our{" "}
                 <strong>
                   <a href={ADMISSIONS_URL}>Admissions Process</a>
@@ -189,8 +189,7 @@ function App() {
               </div>
 
               <div>
-                <strong>15 Cardinal Road, Greenwich, CT 06830</strong>
-                <span>(203) 622-9583</span>
+                <strong>9 Cardinal Road, Greenwich, CT 06830</strong>
               </div>
             </article>
           </div>
