@@ -7,7 +7,7 @@ import gscLogo from "./assets/gsc-logo.png";
 import "./Footer.css";
 
 const SITE_BASE_URL =
-  "https://wingsarenact.wixstudio.com/gscnewsite";
+  "https://www.greenwichskatingclub.com";
 
 const MEMBER_LOGIN_URL =
   "https://www.greenwichskatingclub.org/login";
