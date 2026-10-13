@@ -1,7 +1,6 @@
-import { useEffect, useRef, useState } from "react";
 import logo from "./assets/logo.png";
-import footerLogo from "./assets/gsc-logo.png";
 import heroClubhouse from "./assets/hero-clubhouse.jpg";
+import SiteFooter from "./Footer.jsx";
 
 const SITE_BASE = "https://wingsarenact.wixstudio.com/gscnewsite";
 
@@ -13,7 +12,6 @@ const SITE_BASE = "https://wingsarenact.wixstudio.com/gscnewsite";
 */
 const IMAGES = {
   logo,
-  footerLogo,
 
   hero: heroClubhouse,
 
@@ -68,278 +66,7 @@ function PinIcon() {
   );
 }
 
-/*
-  UPDATE THIS ONE VALUE when the final public GSC
-  Wix domain is connected.
-
-  Every internal footer link below is built from
-  this base URL.
-*/
-const FOOTER_SITE_URL = "https://www.greenwichskatingclub.com";
-
-const MEMBER_LOGIN_URL = "https://www.greenwichskatingclub.org/login";
-
-const exploreGroups = [
-  {
-    title: "About",
-    links: [
-      { label: "About GSC", href: `${FOOTER_SITE_URL}/about` },
-      { label: "Club History", href: `${FOOTER_SITE_URL}/history` },
-      { label: "Board of Governors", href: `${FOOTER_SITE_URL}/board` },
-      { label: "GSC Alumni", href: `${FOOTER_SITE_URL}/alumni` },
-    ],
-  },
-  {
-    title: "Membership",
-    links: [
-      {
-        label: "Admissions Process",
-        href: `${FOOTER_SITE_URL}/admissions`,
-      },
-    ],
-  },
-  {
-    title: "Programs",
-    links: [
-      { label: "Learn to Skate", href: `${FOOTER_SITE_URL}/learn-to-skate` },
-      { label: "Mini Mites", href: `${FOOTER_SITE_URL}/mini-mites` },
-      {
-        label: "Youth Travel Hockey",
-        href: `${FOOTER_SITE_URL}/youth-travel-hockey`,
-      },
-      {
-        label: "Stateline Girls Hockey",
-        href: `${FOOTER_SITE_URL}/stateline-girls-hockey`,
-      },
-      { label: "Figure Skating", href: `${FOOTER_SITE_URL}/figure-skating` },
-      { label: "Adult Hockey", href: `${FOOTER_SITE_URL}/adult-hockey` },
-    ],
-  },
-  {
-    title: "Contact",
-    links: [
-      { label: "Map & Directions", href: `${FOOTER_SITE_URL}/directions` },
-      { label: "Contact Us", href: `${FOOTER_SITE_URL}/contact` },
-    ],
-  },
-];
-
-function FooterArrowIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="m9 5 7 7-7 7" />
-    </svg>
-  );
-}
-
-function FooterPinIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        d="
-          M20 10
-          c0 5-8 11-8 11
-          S4 15 4 10
-          a8 8 0 1 1 16 0Z
-        "
-      />
-      <circle cx="12" cy="10" r="2.5" />
-    </svg>
-  );
-}
-
-function InstagramIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <rect x="3" y="3" width="18" height="18" rx="5" />
-      <circle cx="12" cy="12" r="4" />
-      <circle className="icon-fill" cx="17.5" cy="6.5" r="1" />
-    </svg>
-  );
-}
-
-function FooterLogo() {
-  return (
-    <a
-      className="footer-logo"
-      href={FOOTER_SITE_URL}
-      target="_top"
-      aria-label="Greenwich Skating Club home"
-    >
-      <img src={IMAGES.footerLogo} alt="Greenwich Skating Club" />
-    </a>
-  );
-}
-
-function ExploreMenu() {
-  const [openGroups, setOpenGroups] = useState(() => new Set());
-  const [panelHeights, setPanelHeights] = useState({});
-  const panelRefs = useRef(new Map());
-
-  useEffect(() => {
-    const heights = {};
-
-    panelRefs.current.forEach((node, title) => {
-      heights[title] = node.scrollHeight;
-    });
-
-    setPanelHeights(heights);
-  }, []);
-
-  const toggleGroup = (title) => {
-    setOpenGroups((current) => {
-      const next = new Set(current);
-
-      if (next.has(title)) {
-        next.delete(title);
-      } else {
-        next.add(title);
-      }
-
-      return next;
-    });
-  };
-
-  return (
-    <nav className="footer-menu" aria-label="Footer navigation">
-      <h2>Explore</h2>
-
-      <div className="footer-menu__groups">
-        {exploreGroups.map((group) => {
-          const isOpen = openGroups.has(group.title);
-          const measuredHeight = panelHeights[group.title];
-
-          return (
-            <div className="footer-menu__group" key={group.title}>
-              <button
-                type="button"
-                className="footer-menu__group-title"
-                onClick={() => toggleGroup(group.title)}
-                aria-expanded={isOpen}
-              >
-                <span>{group.title}</span>
-
-                <span
-                  className={`footer-menu__group-arrow${
-                    isOpen ? " footer-menu__group-arrow--open" : ""
-                  }`}
-                  aria-hidden="true"
-                >
-                  <FooterArrowIcon />
-                </span>
-              </button>
-
-              <div
-                className={`footer-menu__group-panel${
-                  isOpen ? " footer-menu__group-panel--open" : ""
-                }`}
-                style={{
-                  maxHeight: isOpen ? `${measuredHeight ?? 600}px` : "0px",
-                }}
-              >
-                <ul
-                  ref={(node) => {
-                    if (node) {
-                      panelRefs.current.set(group.title, node);
-                    } else {
-                      panelRefs.current.delete(group.title);
-                    }
-                  }}
-                >
-                  {group.links.map((link) => (
-                    <li key={link.label}>
-                      <a href={link.href} target="_top">
-                        <span>{link.label}</span>
-                        <FooterArrowIcon />
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </nav>
-  );
-}
-
-function ConnectPanel() {
-  return (
-    <section className="footer-connect" aria-labelledby="connect-title">
-      <div className="footer-connect__info">
-        <h2 id="connect-title">Connect</h2>
-
-        <p>
-          Questions about joining Greenwich Skating Club or visiting the
-          rink?
-        </p>
-
-        <div className="footer-connect__details">
-          <a href={`${FOOTER_SITE_URL}/directions`} target="_top">
-            <FooterPinIcon />
-            <span>9 Cardinal Road · Greenwich, CT 06830</span>
-          </a>
-        </div>
-
-        <a className="member-button" href={MEMBER_LOGIN_URL} target="_blank" rel="noreferrer">
-          <span>Member Login</span>
-          <FooterArrowIcon />
-        </a>
-
-        <a
-          className="instagram-link"
-          href="https://www.instagram.com/thegreenwichskatingclub/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <InstagramIcon />
-          <span>Follow GSC on Instagram</span>
-        </a>
-      </div>
-
-      <div className="footer-map">
-        <iframe
-          title="Greenwich Skating Club location"
-          src="https://www.google.com/maps?q=Greenwich+Skating+Club,+Cardinal+Road,+Greenwich,+CT&output=embed"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        />
-      </div>
-    </section>
-  );
-}
-
-function Footer() {
-  const currentYear = new Date().getFullYear();
-
-  return (
-    <footer className="site-footer">
-      <div className="site-footer__accent" aria-hidden="true">
-        <span />
-        <span />
-      </div>
-
-      <div className="site-footer__rings" aria-hidden="true" />
-
-      <div className="footer-container site-footer__main">
-        <section className="footer-brand" aria-label="Greenwich Skating Club">
-          <FooterLogo />
-        </section>
-
-        <ExploreMenu />
-
-        <ConnectPanel />
-      </div>
-
-      <div className="site-footer__bottom">
-        <div className="footer-container site-footer__bottom-inner">
-          <p>© {currentYear} Greenwich Skating Club</p>
-        </div>
-      </div>
-    </footer>
-  );
-}
+const ADMISSIONS_URL = "https://www.greenwichskatingclub.com/admissions";
 
 function App() {
   return (
@@ -404,12 +131,10 @@ function App() {
               </p>
 
               <p>
-                If you are not currently a member and are
-                interested in joining, please email{" "}
+                If you are interested in joining, please visit
+                our{" "}
                 <strong>
-                  <a href="mailto:gscadmissions@greenwichskatingclub.org">
-                    gscadmissions@<wbr />greenwichskatingclub.org
-                  </a>
+                  <a href={ADMISSIONS_URL}>Admissions Process</a>
                 </strong>
                 .
               </p>
@@ -491,7 +216,7 @@ function App() {
 
               <a
                 className="light-button"
-                href={`${FOOTER_SITE_URL}/admissions`}
+                href={ADMISSIONS_URL}
               >
                 Admissions Process
                 <ArrowIcon />
@@ -508,7 +233,7 @@ function App() {
         </section>
       </main>
 
-      <Footer />
+      <SiteFooter />
     </div>
   );
 }
